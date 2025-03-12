@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wound Segmentation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+:root
+{
+    --clr:#636363;
+}
+.nav{
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--clr);
+}
+.navigation{
+    position: relative;
+    width: 400px;
+    height: 70px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+.navigation ul{
+    display: flex;
+    width: 400px;
+}
+.navigation ul li{
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+.navigation ul li a{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    font-weight: 500;
+}
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    line-height: 80px;
+    font-size: 2em;
+    text-align: center;
+    transition: 0.5s;
+    color: var(--clr);
+}
+.navigation ul li.active a .icon{
+    transform: translateY(-32px);
+}
+.navigation ul li a .text{
+    position: absolute;
+    color: var(--clr);
+    font-weight: 400;
+    font-size: .75em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(20px);
+    padding-top: 20px;
+}
+.navigation ul li.active a .text{
+    opacity: 1;
+    transform: translateY(10px);
+}
+.indicater{
+    position: absolute;
+    top: -50%;
+    width: 70px;
+    height: 70px;
+    background: rgb(193, 0, 42);
+    border-radius: 50%;
+    border: 6px solid var(--clr);
+    transition: 0.5s;
+}
+.indicater::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -22.5px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-right-radius: 20px;
+    box-shadow: 1px -10px 0 0 var(--clr);
+}
+.indicater::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -22.5px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-left-radius: 20px;
+    box-shadow: -1px -10px 0 0 var(--clr);
+}
+.navigation ul li:nth-child(1).active ~ .indicater{
+    transform: translateX(calc(70px * 0));
+}
+.navigation ul li:nth-child(2).active ~ .indicater{
+    transform: translateX(calc(70px * 1));
+}
+.navigation ul li:nth-child(3).active ~ .indicater{
+    transform: translateX(calc(71px * 2));
+}
+.navigation ul li:nth-child(4).active ~ .indicater{
+    transform: translateX(calc(68px * 3));
+}
+.navigation ul li:nth-child(5).active ~ .indicater{
+    transform: translateX(calc(66px * 4));
+}
+.navigation ul li:nth-child(6).active ~ .indicater{
+    transform: translateX(calc(68.5px * 5));
+}
+
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+    color: #636363;
+}
+
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #636363;
+            text-align: center;
+        }
+
+        header {
+    background: linear-gradient(135deg, #636363, #636363);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+header img {
+    margin-right: 2rem;
+    width: 130px;
+    height: 130px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+        main {
+            padding: 2rem;
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        section h2 {
+            font-size: 1.8rem;
+            color: #C1002A;
+            text-shadow: 2px 2px 5px rgba(99, 99, 99, 0.6);
+            border-bottom: 2px solid #C1002A;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        section p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        section ul {
+            padding-left: 20px;
+        }
+
+        section li {
+            margin-bottom: 8px;
+        }
+
+        /* Form Styling */
+        #uploadForm {
+            background: #fafafa;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        select, input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #C1002A;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #C1002A;
+        }
+
+        /* Image Display */
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .image-box {
+            border: 2px solid #636363;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 45%;
+        }
+
+        .image-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Response */
+        #response {
+            font-weight: bold;
+            color: #C1002A;
+            margin-top: 15px;
+        }
+
+        /* Ensure all input and select boxes are same size */
+        .form-group {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="../../../Images/download.png" alt="Logo">
+        <div>
+            <h1>Advancing Medicine with Technology & AI</h1>
+            <h2>Wound Segmentation</h2>
+        </div>
+        <div class="nav">
+            <div class="navigation">
+                <ul>
+                    <li class="list">
+                        <a href="../../../index.html">
+                            <span class="icon">
+                                <ion-icon name="home-outline"></ion-icon>
+                            </span>
+                            <span class="text">Home</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="../../../AboutUs.html">
+                            <span class="icon">
+                                <ion-icon name="person-outline"></ion-icon>
+                            </span>
+                            <span class="text">Profile</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="../../../information.html">
+                            <span class="icon">
+                                <ion-icon name="information-circle-outline"></ion-icon>
+                            </span>
+                            <span class="text">information</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="../../../demo.html">
+                            <span class="icon">
+                                <ion-icon name="play-circle-outline"></ion-icon>
+                            </span>
+                            <span class="text">Demo</span>
+                        </a>
+                    </li>
+                    <li class="list active">
+                        <a href="test_deepskin/api/templates/upload.html">
+                            <span class="icon">
+                                <ion-icon name="images-outline"></ion-icon>
+                            </span>
+                            <span class="text">Segmentation</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="../../../ContactUS.html">
+                            <span class="icon">
+                                <ion-icon name="mail-outline"></ion-icon>
+                            </span>
+                            <span class="text">Contact US</span>
+                        </a>
+                    </li>
+                    <div class="indicater"></div>
+                </ul>
+            </div>
+            <script>
+                const list=document.querySelectorAll('.list');
+                function activeLink(){
+                    list.forEach((item)=>
+                item.classList.remove('active'));
+                this.classList.add('active');
+                }
+                list.forEach((item)=>
+            item.addEventListener('click',activeLink));
+            </script>
+            <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>What is Wound Segmentation?</h2>
+            <p>
+                Wound segmentation is the process of identifying and isolating the wound area from an image, typically in medical images such as photographs of wounds or injuries.
+                This technique is useful for monitoring wound healing, assessing the severity of injuries, and providing medical professionals with accurate data for treatment planning.
+            </p>
+        </section>
+
+        <section>
+            <h2>Methods and Techniques</h2>
+            <ul>
+                <li><strong>Thresholding Segmentation:</strong> Differentiates wounds based on pixel intensity (lighter/darker areas).</li>
+                <li><strong>Deep Learning Algorithms:</strong> Neural networks like <strong>U-Net</strong> are widely used for highly accurate segmentation.</li>
+                <li><strong>Region Growing:</strong> Expands from a seed point, detecting similar areas in the wound.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Upload and Process Image</h2>
+            <form id="uploadForm" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="expected_format">Expected Format:</label>
+                    <select id="expected_format" name="expected_format"></select>
+                </div>
+
+                <div class="form-group">
+                    <label for="file">Select Image:</label>
+                    <input type="file" id="file" name="file" accept="image/*" required onchange="previewImage()">
+                </div>
+
+                <button type="button" onclick="uploadImage()">Upload</button>
+            </form>
+
+            <!-- Image Display -->
+            <div class="image-container">
+                <div class="image-box">
+                    <h3>Original Image</h3>
+                    <img id="originalImage" src="" alt="No image selected" style="display: none;"/>
+                </div>
+                <div class="image-box">
+                    <h3>Segmented Image</h3>
+                    <img id="segmentedImage" src="" alt="No response yet" style="display: none;"/>
+                </div>
+            </div>
+
+            <h3>Response:</h3>
+            <p id="response"></p>
+        </section>
+    </main>
+
+    <script>
+        async function loadExpectedFormats() {
+            try {
+                const response = await fetch("http://127.0.0.1:3000/expected_formats");
+                const formats = await response.json();
+                const select = document.getElementById("expected_format");
+                select.innerHTML = formats.map(format => `<option value="${format}">${format}</option>`).join("");
+            } catch (error) {
+                console.error("Failed to load expected formats", error);
+            }
+        }
+
+        function previewImage() {
+            const fileInput = document.getElementById("file");
+            const originalImage = document.getElementById("originalImage");
+
+            if (fileInput.files && fileInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    originalImage.src = e.target.result;
+                    originalImage.style.display = "block";
+                };
+                reader.readAsDataURL(fileInput.files[0]);
+            }
+        }
+
+        async function toggleForm(disabled) {
+            document.getElementById('expected_format').disabled = disabled;
+            document.getElementById('file').disabled = disabled;
+            document.querySelector('button').disabled = disabled;
+        }
+
+        async function uploadImage() {
+            toggleForm(true);
+            const formData = new FormData();
+            formData.append("expected_format", document.getElementById("expected_format").value);
+            formData.append("file", document.getElementById("file").files[0]);
+
+            try {
+                document.getElementById("response").innerHTML = "Processing...";
+                const response = await fetch(`http://127.0.0.1:3000/upload?expected_format=${document.getElementById("expected_format").value}`, {
+                    method: "POST",
+                    body: formData
+                });
+
+                if (response.ok) {
+                    const blob = await response.blob();
+                    const url = URL.createObjectURL(blob);
+                    document.getElementById("segmentedImage").src = url;
+                    document.getElementById("segmentedImage").style.display = "block";
+                    document.getElementById("response").innerHTML = "<p>Segmentation successful!</p>";
+                } else {
+                    const errorData = await response.json();
+                    document.getElementById("response").innerText = `Error: ${JSON.stringify(errorData.detail)}`;
+                }
+            } catch (error) {
+                document.getElementById("response").innerText = `Error: ${error.message}`;
+            }
+            toggleForm(false);
+        }
+
+        window.onload = loadExpectedFormats;
+    </script>
+</body>
+</html>

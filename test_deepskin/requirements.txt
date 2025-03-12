@@ -1,0 +1,12 @@
+# Demo
+pyside6
+opencv-python
+matplotlib
+
+# API
+fastapi
+python-multipart
+uvicorn[standard]
+
+# Lint
+autopep8
