@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Define character encoding and responsiveness -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
+
+    <!-- Link to external stylesheet -->
     <link rel="stylesheet" href="styles.css">  
 </head>
 <body>
+    <!-- Header with logo, title, and navigation -->
     <header>
+        <!-- Logo image -->
         <img src="Images/download.png" alt="Logo">
+
+        <!-- Site title -->
         <div>
             <h1>Advancing Medicine with Technology & AI</h1>
-            
         </div>
+
+        <!-- Navigation bar -->
         <div class="nav">
             <div class="navigation">
                 <ul>
+                    <!-- Home button -->
                     <li class="list">
                         <a href="index.html">
                             <span class="icon">
@@ -24,6 +33,8 @@
                             <span class="text">Home</span>
                         </a>
                     </li>
+
+                    <!-- Profile page (currently active) -->
                     <li class="list active">
                         <a href="AboutUs.html">
                             <span class="icon">
@@ -32,6 +43,8 @@
                             <span class="text">Profile</span>
                         </a>
                     </li>
+
+                    <!-- Information page -->
                     <li class="list">
                         <a href="information.html">
                             <span class="icon">
@@ -40,6 +53,8 @@
                             <span class="text">information</span>
                         </a>
                     </li>
+
+                    <!-- Demo page -->
                     <li class="list">
                         <a href="demo.html">
                             <span class="icon">
@@ -48,6 +63,8 @@
                             <span class="text">Demo</span>
                         </a>
                     </li>
+
+                    <!-- Segmentation upload page -->
                     <li class="list">
                         <a href="test_deepskin/api/templates/upload.html">
                             <span class="icon">
@@ -56,6 +73,8 @@
                             <span class="text">Segmentation</span>
                         </a>
                     </li>
+
+                    <!-- Contact page -->
                     <li class="list">
                         <a href="ContactUS.html">
                             <span class="icon">
@@ -64,41 +83,65 @@
                             <span class="text">Contact US</span>
                         </a>
                     </li>
+
+                    <!-- Active indicator animation -->
                     <div class="indicater"></div>
                 </ul>
             </div>
+
+            <!-- JavaScript to handle active menu highlighting -->
             <script>
-                const list=document.querySelectorAll('.list');
-                function activeLink(){
-                    list.forEach((item)=>
-                item.classList.remove('active'));
-                this.classList.add('active');
+                const list = document.querySelectorAll('.list');
+                function activeLink() {
+                    list.forEach((item) =>
+                        item.classList.remove('active'));
+                    this.classList.add('active');
                 }
-                list.forEach((item)=>
-            item.addEventListener('click',activeLink));
+                list.forEach((item) =>
+                    item.addEventListener('click', activeLink));
             </script>
+
+            <!-- Ionicons: Icon library -->
             <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
         </div>
     </header>
-<main>
+
+    <!-- Main content of the page -->
+    <main>
+        <!-- Section describing the team -->
         <section>
             <h3>Who we are:</h3> 
             <div> 
-            <img src="Images/DMgroup.png" alt="DMgroup" class="float-right">
-            <p>
-            We the data mining group focus on discovering patterns and useful information in large datasets. We specialize in sorting data into categories, identifying relationships, and grouping similar data points. We also have expertise in visualizing data and applying these techniques to solve real-world problems and research questions
-            </p> 
-        </div>
+                <!-- Team image -->
+                <img src="Images/DMgroup.png" alt="DMgroup" class="float-right">
+
+                <!-- Team description -->
+                <p>
+                    We the data mining group focus on discovering patterns and useful information in large datasets. 
+                    We specialize in sorting data into categories, identifying relationships, and grouping similar data points. 
+                    We also have expertise in visualizing data and applying these techniques to solve real-world problems and research questions
+                </p> 
+            </div>
         </section>
+
+        <!-- Section describing the collaboration with KhIMU -->
         <section>
             <h3>KHARKIV INTERNATIONAL MEDICAL UNIVERSITY - KhIMU</h3>
-        <div>
-            <img src="Images/logo2.png" alt="wound" class="KhIMU">
-            <p>
-                For this project we teamed up with KhIMU, a leading medical university known for training highly skilled healthcare professionals. KhIMU focuses on both education and research, ensuring students gain hands-on experience through internships and clinical practice. <br><br>Their involvement in this project strengthens the integration of AI in reconstructive surgery and medical training, particularly for wartime injuries. By leveraging AI-driven tools like 3D scanning, thermal imaging, and ultrasound, KhIMU aims to improve wound care and surgical outcomes. Their commitment to innovation helps shape the future of medical education and enhances healthcare practices in critical conditions
-            </p>
-        </div>
-</main>
+            <div>
+                <!-- KhIMU logo -->
+                <img src="Images/logo2.png" alt="wound" class="KhIMU">
+
+                <!-- Description of collaboration -->
+                <p>
+                    For this project we teamed up with KhIMU, a leading medical university known for training highly skilled healthcare professionals. 
+                    KhIMU focuses on both education and research, ensuring students gain hands-on experience through internships and clinical practice. <br><br>
+                    Their involvement in this project strengthens the integration of AI in reconstructive surgery and medical training, particularly for wartime injuries. 
+                    By leveraging AI-driven tools like 3D scanning, thermal imaging, and ultrasound, KhIMU aims to improve wound care and surgical outcomes. 
+                    Their commitment to innovation helps shape the future of medical education and enhances healthcare practices in critical conditions
+                </p>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
