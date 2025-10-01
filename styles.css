@@ -61,21 +61,17 @@
     transform: translateY(-32px);
     
 }
-.navigation ul li a .text{
+.navigation ul li a .text {
     position: absolute;
+    bottom: 10px; 
     color: var(--clr);
     font-weight: 400;
-    font-size: .75em;
+    font-size: 0.75em;
     letter-spacing: 0.05em;
-    transition: 0.5s;
-    opacity: 0;
-    transform: translateY(20px);
-    padding-top: 20px;
+    opacity: 1; 
+    transform: none; 
 }
-.navigation ul li.active a .text{
-    opacity: 1;
-    transform: translateY(10px);
-}
+
 .indicater{
     position: absolute;
     top: -50%;
