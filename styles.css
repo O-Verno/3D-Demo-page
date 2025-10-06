@@ -51,8 +51,8 @@
 .navigation ul li a .icon{
     position: relative;
     display: block;
-    line-height: 80px;
-    font-size: 2em;
+    line-height: 60px; 
+    font-size: 1.6em;
     text-align: center;
     transition: 0.5s;
     color: var(--clr);
@@ -61,15 +61,26 @@
     transform: translateY(-32px);
     
 }
+.navigation ul li.active {
+    background-color: rgba(193, 0, 42, 0.05); /* svag rød baggrund */
+    border-radius: 10px;
+}
+
 .navigation ul li a .text {
     position: absolute;
     bottom: 10px; 
     color: var(--clr);
     font-weight: 400;
-    font-size: 0.75em;
-    letter-spacing: 0.05em;
+    font-size: 0.7em;
+    letter-spacing: 0.03em;
+    padding-top: 16px;
     opacity: 1; 
     transform: none; 
+}
+.navigation ul li a:hover .icon,
+.navigation ul li a:hover .text {
+    color: #C1002A; 
+    transition: all 0.3s ease;
 }
 
 .indicater{
@@ -77,9 +88,9 @@
     top: -50%;
     width: 65px;
     height: 65px;
-    background: rgb(193, 0, 42);
+    background: #C1002A;
     border-radius: 50%;
-    border: 6px solid var(--clr);
+    border: 6px solid white;
     transition: 0.5s;
 }
 .indicater::before{
