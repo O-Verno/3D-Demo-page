@@ -56,7 +56,7 @@
     position: relative;
     display: block;
     line-height: 60px; 
-    font-size: 1.8em;
+    font-size: 2em;
     text-align: center;
     transition: 0.5s;
     color: var(--clr);
@@ -75,7 +75,7 @@
     bottom: 10px; 
     color: var(--clr);
     font-weight: 400;
-    font-size: 0.8em;
+    font-size: 0.9em;
     letter-spacing: 0.03em;
     padding-top: 16px;
     opacity: 1; 
