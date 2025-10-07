@@ -34,20 +34,24 @@
 .navigation ul li{
     position: relative;
     list-style: none;
-    width: 75px;
+    width: 85px;
     height: 75px;
     z-index: 1;
 }
-.navigation ul li a{
+.navigation ul li a {
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    text-align: center;
     width: 100%;
-    font-weight: 500;
+    height: 100%;
+    padding: 5px 0;
+    font-size: 0.75rem; 
+    line-height: 1;
+    text-decoration: none;
 }
+
 .navigation ul li a .icon{
     position: relative;
     display: block;
