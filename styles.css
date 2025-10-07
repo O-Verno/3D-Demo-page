@@ -56,7 +56,7 @@
     position: relative;
     display: block;
     line-height: 60px; 
-    font-size: 2em;
+    font-size: 1.6em;
     text-align: center;
     transition: 0.5s;
     color: var(--clr);
@@ -75,7 +75,7 @@
     bottom: 10px; 
     color: var(--clr);
     font-weight: 400;
-    font-size: 0.9em;
+    font-size: 0.7em;
     letter-spacing: 0.03em;
     padding-top: 16px;
     opacity: 1; 
@@ -84,16 +84,19 @@
 .navigation ul li a:hover .icon,
 .navigation ul li a:hover .text {
     color: #C1002A; 
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 }
 
-.indicater {
-    width: 55px;
-    height: 55px;
-    top: -45%;
-    border: 5px solid white;
+.indicater{
+    position: absolute;
+    top: -50%;
+    width: 65px;
+    height: 65px;
+    background: #C1002A;
+    border-radius: 50%;
+    border: 6px solid white;
+    transition: 0.5s;
 }
-
 .indicater::before{
     content: '';
     position: absolute;
@@ -134,7 +137,9 @@
 .navigation ul li:nth-child(6).active ~ .indicater{
     transform: translateX(calc(85px * 5));
 }
-
+.navigation ul li:nth-child(7).active ~ .indicater {
+    transform: translateX(calc(85px * 6)); 
+}
 
 
 /* General Styles */
