@@ -56,7 +56,7 @@
     position: relative;
     display: block;
     line-height: 60px; 
-    font-size: 1.6em;
+    font-size: 1.8em;
     text-align: center;
     transition: 0.5s;
     color: var(--clr);
@@ -75,7 +75,7 @@
     bottom: 10px; 
     color: var(--clr);
     font-weight: 400;
-    font-size: 0.7em;
+    font-size: 0.8em;
     letter-spacing: 0.03em;
     padding-top: 16px;
     opacity: 1; 
@@ -84,7 +84,7 @@
 .navigation ul li a:hover .icon,
 .navigation ul li a:hover .text {
     color: #C1002A; 
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 }
 
 .indicater {
