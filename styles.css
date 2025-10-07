@@ -137,6 +137,10 @@
 .navigation ul li:nth-child(6).active ~ .indicater{
     transform: translateX(calc(68.5px * 5));
 }
+.navigation ul li:nth-child(7).active ~ .indicater {
+    transform: translateX(calc(70px * 6)); 
+}
+
 
 /* General Styles */
 body {
