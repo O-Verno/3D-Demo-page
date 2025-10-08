@@ -117,30 +117,3 @@ function dragEnd(e) {
     currTile = null;
     otherTile = null;
 }
-// ================================
-// Navigation Indicator Logic
-// ================================
-document.addEventListener("DOMContentLoaded", function () {
-    const listItems = document.querySelectorAll('.navigation ul li');
-    const indicator = document.querySelector('.indicater');
-
-    listItems.forEach((item, index) => {
-        const link = item.querySelector('a');
-        const href = link.getAttribute('href');
-
-        // Tjek om linkets path matcher det aktuelle path
-        const currentPath = window.location.pathname.split("/").pop(); // fx 'demo.html'
-
-        if (href === currentPath) {
-            item.classList.add('active');
-
-            // Flyt indikatoren (beregnet efter 85px bredde pr. ikon)
-            if (indicator) {
-                indicator.style.transform = `translateX(${85 * index}px)`;
-            }
-        } else {
-            item.classList.remove('active');
-        }
-    });
-});
-
