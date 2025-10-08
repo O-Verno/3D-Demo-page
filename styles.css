@@ -133,10 +133,10 @@
     transform: translateX(208px);
 }
 .navigation ul li:nth-of-type(5).active ~ .indicater {
-    transform: translateX(268px);
+    transform: translateX(270px);
 }
 .navigation ul li:nth-of-type(6).active ~ .indicater {
-    transform: translateX(348px);
+    transform: translateX(345px);
 }
     
 
