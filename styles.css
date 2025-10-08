@@ -140,9 +140,7 @@
 .navigation ul li:nth-child(7).active ~ .indicater {
     transform: translateX(calc(85px * 6)); 
 }
-.navigation ul li:nth-child(7).active ~ .indicater {
-    transform: translateX(calc(85px * 7)); 
-}
+
 
 
 /* General Styles */
