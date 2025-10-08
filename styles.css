@@ -27,11 +27,9 @@
     align-items: center;
     border-radius: 10px;
 }
-.navigation ul {
+.navigation ul{
     display: flex;
-    justify-content: space-between;
-    gap: 1px;
-    padding: 0 1px;
+    width: 430px;
 }
 .navigation ul li{
     position: relative;
