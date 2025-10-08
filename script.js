@@ -120,20 +120,25 @@ function dragEnd(e) {
 // ================================
 // Navigation Indicator Logic
 // ================================
-
-// Highlight active menu item based on current URL
 document.addEventListener("DOMContentLoaded", function () {
     const listItems = document.querySelectorAll('.list');
+    const indicator = document.querySelector('.indicater');
 
-    listItems.forEach((item) => {
+    listItems.forEach((item, index) => {
         const link = item.querySelector('a');
         const href = link.getAttribute('href');
 
-        // Match by checking if the href is part of the current page URL
+        // Gør dette element aktivt hvis URL matcher
         if (window.location.href.includes(href)) {
             item.classList.add('active');
+
+            // Flyt indikator med samme afstand som i CSS (85px)
+            if (indicator) {
+                indicator.style.transform = `translateX(${85 * index}px)`;
+            }
         } else {
             item.classList.remove('active');
         }
     });
 });
+
