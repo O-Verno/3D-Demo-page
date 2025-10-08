@@ -121,31 +121,15 @@ function dragEnd(e) {
 // Navigation Indicator Logic
 // ================================
 
+// Highlight active menu item based on current URL
 document.addEventListener("DOMContentLoaded", function () {
-    const list = document.querySelectorAll(".list");
-    const indicator = document.querySelector(".indicater");
-
-    function moveIndicatorToActive(el) {
-        const index = el.getAttribute("data-index");
-        const liWidth = el.offsetWidth;
-        indicator.style.transform = `translateX(${index * liWidth}px)`;
-    }
-
-    list.forEach((item) => {
-        item.addEventListener("click", function () {
-            list.forEach((i) => i.classList.remove("active"));
-            this.classList.add("active");
-            moveIndicatorToActive(this);
-        });
-    });
-
-    // On page load, move the indicator to the active element
     const listItems = document.querySelectorAll('.list');
 
     listItems.forEach((item) => {
         const link = item.querySelector('a');
         const href = link.getAttribute('href');
 
+        // Match by checking if the href is part of the current page URL
         if (window.location.href.includes(href)) {
             item.classList.add('active');
         } else {
