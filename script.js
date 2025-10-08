@@ -121,18 +121,20 @@ function dragEnd(e) {
 // Navigation Indicator Logic
 // ================================
 document.addEventListener("DOMContentLoaded", function () {
-    const listItems = document.querySelectorAll('.list');
+    const listItems = document.querySelectorAll('.navigation ul li');
     const indicator = document.querySelector('.indicater');
 
     listItems.forEach((item, index) => {
         const link = item.querySelector('a');
         const href = link.getAttribute('href');
 
-        // Gør dette element aktivt hvis URL matcher
-        if (window.location.href.includes(href)) {
+        // Tjek om linkets path matcher det aktuelle path
+        const currentPath = window.location.pathname.split("/").pop(); // fx 'demo.html'
+
+        if (href === currentPath) {
             item.classList.add('active');
 
-            // Flyt indikator med samme afstand som i CSS (85px)
+            // Flyt indikatoren (beregnet efter 85px bredde pr. ikon)
             if (indicator) {
                 indicator.style.transform = `translateX(${85 * index}px)`;
             }
