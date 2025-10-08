@@ -120,28 +120,25 @@
     border-top-left-radius: 20px;
     box-shadow: -1px -10px 0 0 var(--clr);
 }
-.navigation ul li:nth-child(1).active ~ .indicater {
+.navigation ul li:nth-of-type(1).active ~ .indicater {
     transform: translateX(0px);
 }
-.navigation ul li:nth-child(2).active ~ .indicater {
+.navigation ul li:nth-of-type(2).active ~ .indicater {
     transform: translateX(85px);
 }
-.navigation ul li:nth-child(3).active ~ .indicater {
+.navigation ul li:nth-of-type(3).active ~ .indicater {
     transform: translateX(170px);
 }
-.navigation ul li:nth-child(4).active ~ .indicater {
+.navigation ul li:nth-of-type(4).active ~ .indicater {
     transform: translateX(255px);
 }
-.navigation ul li:nth-child(5).active ~ .indicater {
+.navigation ul li:nth-of-type(5).active ~ .indicater {
     transform: translateX(340px);
 }
-.navigation ul li:nth-child(6).active ~ .indicater {
+.navigation ul li:nth-of-type(6).active ~ .indicater {
     transform: translateX(425px);
 }
-
-
-
-
+    
 
 /* General Styles */
 body {
