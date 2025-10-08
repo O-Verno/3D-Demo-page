@@ -117,3 +117,31 @@ function dragEnd(e) {
     currTile = null;
     otherTile = null;
 }
+// ================================
+// Navigation Indicator Logic
+// ================================
+
+document.addEventListener("DOMContentLoaded", function () {
+    const list = document.querySelectorAll(".list");
+    const indicator = document.querySelector(".indicater");
+
+    function moveIndicatorToActive(el) {
+        const index = el.getAttribute("data-index");
+        const liWidth = el.offsetWidth;
+        indicator.style.transform = `translateX(${index * liWidth}px)`;
+    }
+
+    list.forEach((item) => {
+        item.addEventListener("click", function () {
+            list.forEach((i) => i.classList.remove("active"));
+            this.classList.add("active");
+            moveIndicatorToActive(this);
+        });
+    });
+
+    // On page load, move the indicator to the active element
+    const active = document.querySelector(".list.active");
+    if (active) {
+        moveIndicatorToActive(active);
+    }
+});
