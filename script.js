@@ -140,8 +140,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // On page load, move the indicator to the active element
-    const active = document.querySelector(".list.active");
-    if (active) {
-        moveIndicatorToActive(active);
-    }
+    const listItems = document.querySelectorAll('.list');
+
+    listItems.forEach((item) => {
+        const link = item.querySelector('a');
+        const href = link.getAttribute('href');
+
+        if (window.location.href.includes(href)) {
+            item.classList.add('active');
+        } else {
+            item.classList.remove('active');
+        }
+    });
 });
