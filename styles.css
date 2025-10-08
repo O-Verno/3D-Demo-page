@@ -124,7 +124,7 @@
     transform: translateX(0px);
 }
 .navigation ul li:nth-of-type(2).active ~ .indicater {
-    transform: translateX(65px);
+    transform: translateX(67.5px);
 }
 .navigation ul li:nth-of-type(3).active ~ .indicater {
     transform: translateX(170px);
