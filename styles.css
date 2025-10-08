@@ -30,8 +30,8 @@
 .navigation ul {
     display: flex;
     justify-content: space-between;
-    gap: 10px;
-    padding: 0 10px;
+    gap: 5px;
+    padding: 0 5px;
 }
 .navigation ul li{
     position: relative;
