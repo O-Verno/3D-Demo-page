@@ -130,13 +130,13 @@
     transform: translateX(138px);
 }
 .navigation ul li:nth-of-type(4).active ~ .indicater {
-    transform: translateX(208px);
+    transform: translateX(207px);
 }
 .navigation ul li:nth-of-type(5).active ~ .indicater {
-    transform: translateX(270px);
+    transform: translateX(272px);
 }
 .navigation ul li:nth-of-type(6).active ~ .indicater {
-    transform: translateX(345px);
+    transform: translateX(344px);
 }
     
 
