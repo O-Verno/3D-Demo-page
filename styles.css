@@ -127,16 +127,16 @@
     transform: translateX(70px);
 }
 .navigation ul li:nth-of-type(3).active ~ .indicater {
-    transform: translateX(170px);
+    transform: translateX(140px);
 }
 .navigation ul li:nth-of-type(4).active ~ .indicater {
-    transform: translateX(255px);
+    transform: translateX(210px);
 }
 .navigation ul li:nth-of-type(5).active ~ .indicater {
-    transform: translateX(340px);
+    transform: translateX(280px);
 }
 .navigation ul li:nth-of-type(6).active ~ .indicater {
-    transform: translateX(425px);
+    transform: translateX(350px);
 }
     
 
