@@ -91,7 +91,7 @@
     transition: all 0.2s ease;
 }
 
-.indicater{
+.indicater {
     position: absolute;
     top: -50%;
     width: 65px;
@@ -99,9 +99,10 @@
     background: #C1002A;
     border-radius: 50%;
     border: 6px solid white;
-    transition: transform 0.3s ease-in-out;
-
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* smooth easing */
+    will-change: transform;
 }
+
 .indicater::before{
     content: '';
     position: absolute;
