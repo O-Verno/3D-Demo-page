@@ -87,7 +87,10 @@
     color: #C1002A; 
     transition: all 0.2s ease;
 }
-
+.navigation ul li a:focus {
+    outline: 2px solid #C1002A;
+    outline-offset: 4px;
+}
 .indicater{
     position: absolute;
     top: -50%;
