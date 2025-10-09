@@ -145,8 +145,8 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f4f8;
-    color: #636363;
+    background: linear-gradient(to right, #f4f6f8, #eaeff4);
+    color: #333;
 }
 
 /* Header Styles */
@@ -189,11 +189,11 @@ header p {
 /* Main Content Styles */
 main {
     padding: 2rem;
-    max-width: 900px;
-    margin: 0 auto;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    max-width: 1000px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 section {
