@@ -81,6 +81,10 @@
     opacity: 1; 
     transform: none; 
 }
+.navigation ul li a:hover {
+    background-color: rgba(193, 0, 42, 0.1);
+    border-radius: 10px;
+}
 .navigation ul li a:hover .icon,
 .navigation ul li a:hover .text {
     color: #C1002A; 
