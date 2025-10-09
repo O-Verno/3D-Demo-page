@@ -60,14 +60,11 @@
     text-align: center;
     transition: 0.5s;
     color: var(--clr);
-    transition: transform 0.4s ease, color 0.3s ease;
 }
-
-.navigation ul li.active a .icon {
-    transform: translateY(-20px) scale(1.05);
+.navigation ul li.active a .icon{
+    transform: translateY(-32px);
+    
 }
-
-
 .navigation ul li.active {
     background-color: rgba(193, 0, 42, 0.05); /* svag rød baggrund */
     border-radius: 10px;
@@ -83,21 +80,14 @@
     padding-top: 16px;
     opacity: 1; 
     transform: none; 
-    transition: color 0.3s ease, opacity 0.3s ease;
 }
-.navigation ul li a:hover {
-    background-color: rgba(193, 0, 42, 0.08);
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-}
-
 .navigation ul li a:hover .icon,
 .navigation ul li a:hover .text {
     color: #C1002A; 
     transition: all 0.2s ease;
 }
 
-.indicater {
+.indicater{
     position: absolute;
     top: -50%;
     width: 65px;
@@ -105,10 +95,9 @@
     background: #C1002A;
     border-radius: 50%;
     border: 6px solid white;
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* smooth easing */
-    will-change: transform;
-}
+    transition: transform 0.3s ease-in-out;
 
+}
 .indicater::before{
     content: '';
     position: absolute;
