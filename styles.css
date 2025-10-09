@@ -151,14 +151,14 @@ body {
 
 /* Header Styles */
 header {
-    background: linear-gradient(135deg, #636363, #636363);
+    background: linear-gradient(90deg, #3f3f3f, #5f5f5f);
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 30px;
 }
 
 header img {
