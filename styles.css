@@ -50,6 +50,7 @@
     font-size: 0.75rem; 
     line-height: 1;
     text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .navigation ul li a .icon{
