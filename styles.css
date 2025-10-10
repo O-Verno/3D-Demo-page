@@ -11,14 +11,15 @@
     --clr:#636363;
 }
 .new-nav {
-  background: rgba(193, 0, 42, 0.95); /* lidt mørkere baggrund */
+  padding: 0.6rem 0;
+  background: rgba(193, 0, 42, 0.95);
   backdrop-filter: blur(6px);
-  padding: 1.2rem 0;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
+
 
 .new-nav ul {
   display: flex;
@@ -74,13 +75,14 @@ body {
 
 /* Header Styles */
 header {
-    background: rgba(193, 0, 42, 0.85); /* rød med lidt transparens */
-    color: white;
-    padding: 1.5rem 2rem;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(6px); /* giver glas-effekt */
-    border-bottom: 3px solid #fff0f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 2rem;
+  background: rgba(193, 0, 42, 0.95);
+  color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  backdrop-filter: blur(6px);
 }
 
 header img {
@@ -90,11 +92,10 @@ header img {
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2.3rem;
-    font-weight: bold;
-    align-items: center;
+  font-size: 1.5rem;
+  margin-left: 1rem;
 }
+
 section h2, section h3 {
     color: #C1002A;
     font-weight: 600;
