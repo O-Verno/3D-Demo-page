@@ -40,11 +40,11 @@
 
 /* Navigation Bar */
 .compact-nav {
-  background: rgba(193, 0, 42, 0.95);
+  background-color: #C1002A;
+  padding: 0.5rem 1rem;
   display: flex;
   justify-content: center;
-  padding: 0.4rem 0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .compact-nav ul {
@@ -55,48 +55,46 @@
   padding: 0;
 }
 
+.compact-nav li {
+  position: relative;
+}
+
 .compact-nav li a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 0.75rem;
+  color: #fff;
   text-decoration: none;
-  color: white;
-  font-size: 0.72rem;
-  transition: background 0.2s, color 0.2s;
+  transition: all 0.3s ease;
 }
 
 .compact-nav li a ion-icon {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   margin-bottom: 0.2rem;
+  transition: all 0.3s ease;
 }
 
 .compact-nav li a:hover {
+  color: #ffdede;
+}
+
+.compact-nav li.active a {
   color: #ffe3e3;
-}
-
-.compact-nav li a:hover ion-icon {
-  color: #ffd6d6;
-}
-compact-nav li.active a {
-  color: #ffd6d6;
-  position: relative;
-}
-
-.compact-nav li.active a ion-icon {
-  color: #ffd6d6;
 }
 
 .compact-nav li.active a::after {
   content: '';
   position: absolute;
-  bottom: -5px;
+  bottom: -4px;
   left: 50%;
   transform: translateX(-50%);
-  width: 18px;
+  width: 16px;
   height: 3px;
   background: #fff;
   border-radius: 2px;
 }
+
 
 /* Optional smoother transitions */
 .compact-nav li a,
