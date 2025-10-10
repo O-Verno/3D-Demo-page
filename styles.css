@@ -77,7 +77,32 @@
 .compact-nav li a:hover ion-icon {
   color: #ffd6d6;
 }
+compact-nav li.active a {
+  color: #ffd6d6;
+  position: relative;
+}
 
+.compact-nav li.active a ion-icon {
+  color: #ffd6d6;
+}
+
+.compact-nav li.active a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* Optional smoother transitions */
+.compact-nav li a,
+.compact-nav li a ion-icon {
+  transition: color 0.3s ease;
+}
     
 
 /* General Styles */
