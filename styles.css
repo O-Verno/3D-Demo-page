@@ -10,58 +10,74 @@
 {
     --clr:#636363;
 }
-.new-nav {
-  padding: 0.6rem 0;
+/* Top header */
+.top-header {
   background: rgba(193, 0, 42, 0.95);
-  backdrop-filter: blur(6px);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 
-.new-nav ul {
+.top-header img {
+  height: 50px;
+  width: auto;
+}
+
+.top-header h1 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Navigation Bar */
+.compact-nav {
+  background: rgba(193, 0, 42, 0.95);
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding: 0.4rem 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.compact-nav ul {
   list-style: none;
+  display: flex;
+  gap: 1.2rem;
   margin: 0;
   padding: 0;
-  flex-wrap: wrap;
 }
 
-.new-nav ul li {
-  margin: 0 1rem;
-}
-
-.new-nav ul li a {
+.compact-nav li a {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-decoration: none;
   color: white;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-  padding: 0.5rem;
-  border-radius: 6px;
+  font-size: 0.72rem;
+  transition: background 0.2s, color 0.2s;
 }
 
-.new-nav ul li a.active {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid white;
+.compact-nav li a ion-icon {
+  font-size: 1.3rem;
+  margin-bottom: 0.2rem;
 }
 
-
-.new-nav ul li a ion-icon {
-  font-size: 2rem;
-  margin-bottom: 0.4rem;
+.compact-nav li a:hover {
+  color: #ffe3e3;
 }
 
-.new-nav ul li a:hover {
-  background-color: rgba(100, 0, 25, 0.85); /* mørkere rød */
-  color: #fff;
+.compact-nav li a:hover ion-icon {
+  color: #ffd6d6;
 }
+
     
 
 /* General Styles */
