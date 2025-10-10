@@ -1,67 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Metadata and responsive settings -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Form</title> 
+  <!-- Metadata -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
 
-    <!-- Link to external stylesheet -->
-    <link rel="stylesheet" href="styles.css">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
 
-    <!-- Font Awesome for icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <!-- Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-    <!-- SMTP.js library (unused in this version) -->
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <!-- Libraries -->
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-    <!-- SweetAlert2 for stylish alert popups -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <!-- EmailJS (also not used here) -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="script.js"></script>
+  <!-- Your script -->
+  <script src="script.js" defer></script>
 </head>
 
 <body>
-    <!-- Header section -->
-    <header>
-        <header class="top-header">
-        <div class="header-left">
-            <img src="Images/download.png" alt="Logo">
-            <h1>Advancing Medicine with Technology & AI</h1>
-        </div>
-        </header>
+  <!-- Top header -->
+  <header class="top-header">
+    <div class="header-left">
+      <img src="Images/download.png" alt="Logo">
+      <h1>Advancing Medicine with Technology & AI</h1>
+    </div>
+  </header>
 
-        <!-- Navigation bar -->
-        <div class="nav">
-            <nav class="compact-nav">
-                <ul>
-                    <li><a href="index.html"><ion-icon name="home-outline"></ion-icon><span>Home</span></a></li>
-                    <li><a href="AboutUs.html"><ion-icon name="person-outline"></ion-icon><span>Profile</span></a></li>
-                    <li><a href="information.html"><ion-icon name="information-circle-outline"></ion-icon><span>Information</span></a></li>
-                    <li><a href="demo.html"><ion-icon name="play-circle-outline"></ion-icon><span>Demo</span></a></li>
-                    <li><a href="https://healthview.uni-mainz.de/segmentation-3d-prediction/" target="_blank"><ion-icon name="sparkles-outline"></ion-icon><span>3D Prediction</span></a></li>
-                    <li class="active"><a href="ContactUS.html"><ion-icon name="mail-outline"></ion-icon><span>Contact</span></a></li>
-                </ul>
-            </nav>
+  <!-- Navigation -->
+  <nav class="compact-nav">
+    <ul>
+      <li><a href="index.html"><ion-icon name="home-outline"></ion-icon><span>Home</span></a></li>
+      <li><a href="AboutUs.html"><ion-icon name="person-outline"></ion-icon><span>Profile</span></a></li>
+      <li><a href="information.html"><ion-icon name="information-circle-outline"></ion-icon><span>Information</span></a></li>
+      <li><a href="demo.html"><ion-icon name="play-circle-outline"></ion-icon><span>Demo</span></a></li>
+      <li><a href="https://healthview.uni-mainz.de/segmentation-3d-prediction/" target="_blank"><ion-icon name="sparkles-outline"></ion-icon><span>3D Prediction</span></a></li>
+      <li><a href="ContactUS.html"><ion-icon name="mail-outline"></ion-icon><span>Contact</span></a></li>
+    </ul>
+  </nav>
 
-            <!-- JavaScript for active menu highlighting -->
-            <script>
-                const list = document.querySelectorAll('.list');
-                function activeLink() {
-                    list.forEach((item) => item.classList.remove('active'));
-                    this.classList.add('active');
-                }
-                list.forEach((item) =>
-                    item.addEventListener('click', activeLink));
-            </script>
+  <!-- Active navigation highlight based on file name -->
+  <script>
+    const currentPage = location.pathname.split("/").pop();
+    document.querySelectorAll('.compact-nav a').forEach(link => {
+      if (link.getAttribute('href') === currentPage) {
+        link.parentElement.classList.add('active');
+      }
+    });
+  </script>
 
-            <!-- Ionicons icon library (used for nav icons) -->
-            <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-            <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-        </div>
-    </header>
+  <!-- Your contact form and page content should go here -->
+
+</body>
+</html>
+
 
     <!-- Main content area with contact form -->
     <div class="hero">
