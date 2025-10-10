@@ -11,13 +11,13 @@
     --clr:#636363;
 }
 .new-nav {
-  background: rgba(193, 0, 42, 0.9);
+  background: rgba(193, 0, 42, 0.95); /* lidt mørkere baggrund */
   backdrop-filter: blur(6px);
-  padding: 1rem 0;
+  padding: 1.2rem 0;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
 }
 
 .new-nav ul {
@@ -47,8 +47,8 @@
 }
 
 .new-nav ul li a ion-icon {
-  font-size: 1.8rem;
-  margin-bottom: 0.3rem;
+  font-size: 2rem;
+  margin-bottom: 0.4rem;
 }
 
 .new-nav ul li a:hover {
