@@ -41,7 +41,9 @@
   text-decoration: none;
   color: white;
   font-size: 0.9rem;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 6px;
 }
 
 .new-nav ul li a ion-icon {
@@ -50,7 +52,8 @@
 }
 
 .new-nav ul li a:hover {
-  color: #ffe3e3;
+  background-color: rgba(100, 0, 25, 0.85); /* mørkere rød */
+  color: #fff;
 }
     
 
