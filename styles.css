@@ -146,23 +146,22 @@
 
 /* General Styles */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #f4f6f8, #eaeff4);
-    color: #333;
+    background-color: #f4f4f9; /* blødere baggrund */
+    color: #333; /* mørkere tekst for kontrast */
 }
 
 /* Header Styles */
 header {
-    background: linear-gradient(90deg, #3f3f3f, #5f5f5f);
+    background: rgba(193, 0, 42, 0.85); /* rød med lidt transparens */
     color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 1.5rem 2rem;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6px); /* giver glas-effekt */
+    border-bottom: 3px solid #fff0f0;
 }
 
 header img {
@@ -178,25 +177,28 @@ header h1 {
     align-items: center;
 }
 section h2, section h3 {
+    color: #C1002A;
     font-weight: 600;
     margin-bottom: 1rem;
 }
 
 section p {
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
     font-size: 1rem;
+    line-height: 1.7;
+    color: #444;
 }
+
         
 /* Main Content Styles */
 main {
     padding: 2rem;
+    max-width: 900px;
     margin: 2rem auto;
-    max-width: 1000px;
-    background: #ffffff;
+    background: white;
     border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
+
 
 section {
     border-left: 5px solid #C1002A;
@@ -233,10 +235,20 @@ ul li {
     border: 5px double rgb(193, 0, 42);
     padding: 10px;
 }
-
-.img1 {
-    float: right;
+.info-box {
+    background-color: #fff8f8;
+    border-left: 6px solid #C1002A;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
+
+.right, .float-right, .img1 {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
 
 .images {
     margin-top: 100px;
