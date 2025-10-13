@@ -38,23 +38,28 @@
   margin: 0;
 }
 
-/* Navigation Bar */
 .compact-nav {
   background-color: white;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  padding: 0.5rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  padding: 0.75rem 1rem;
   margin: 1rem auto;
-  max-width: 800px;
+  max-width: 950px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .compact-nav ul {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
   padding: 0;
   margin: 0;
   list-style: none;
+}
+
+.compact-nav li {
+  display: flex;
 }
 
 .compact-nav a {
@@ -62,19 +67,16 @@
   flex-direction: column;
   align-items: center;
   text-decoration: none;
-  color: #444;
   background-color: #f9f9f9;
-  padding: 0.6rem 0.8rem;
+  padding: 0.5rem 0.7rem;
   border-radius: 10px;
-  transition: all 0.3s ease-in-out;
-  font-weight: 500;
+  transition: all 0.25s ease-in-out;
   font-size: 0.8rem;
+  font-weight: 500;
+  color: #333;
+  min-width: 70px;
   text-align: center;
-  min-width: 80px; /* minimum width */
-  max-width: 90px; /* optional */
-  white-space: nowrap;
 }
-
 
 .compact-nav a:hover {
   background-color: #C1002A;
@@ -82,10 +84,21 @@
   transform: translateY(-3px);
 }
 
-.compact-nav ion-icon {
-  font-size: 1.4rem;
-  margin-bottom: 0.3rem;
+.compact-nav li.active a {
+  background-color: #C1002A;
+  color: white;
 }
+
+.compact-nav a span {
+  margin-top: 0.25rem;
+}
+
+.compact-nav ion-icon {
+  font-size: 1.3rem;
+  font-weight: 300; /* ensures thinner icon look */
+  line-height: 1;
+}
+
     
 
 /* General Styles */
