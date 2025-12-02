@@ -1,4 +1,33 @@
 // ================================
+// FUNCTION BUTTONS
+// ================================
+
+document.getElementById("login").addEventListener("click", () => {
+    alert("Login clicked");
+});
+
+document.getElementById("upload").addEventListener("click", () => {
+    alert("Upload Scan clicked");
+});
+
+document.getElementById("segment").addEventListener("click", () => {
+    alert("Segment clicked");
+});
+
+document.getElementById("view").addEventListener("click", () => {
+    alert("Opening 3D View...");
+});
+
+document.getElementById("print").addEventListener("click", () => {
+    alert("Preparing print...");
+    window.print();
+});
+
+document.getElementById("assess").addEventListener("click", () => {
+    alert("Running wound assessment...");
+});
+
+// ================================
 // Image Overlay Simulation
 // ================================
 
